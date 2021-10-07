@@ -1,0 +1,56 @@
+<div class="">
+
+<!-- Modal -->
+<div class="modal fade shadow" id="modelsModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title ml-auto" name="test" id="modelsModalTitle">Crear Modelo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  id="company_form_content" name="company_form"  class="p-1 mb-0">
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6 ml-auto">
+              <div class="form-group">
+                <label class="required">Modelo</label>
+                <input id="model_name" type="text" name="company_form_name" value="" class="form-control" placeholder="Ej. Vitz" >
+
+              </div>
+            </div>
+            <div class="col-md-6 ml-auto">
+              <div class="form-group">
+                <label for="">Marca</label>
+                <div class="card">
+                  <div class="card-body">
+                    <button id="model_brand_creation" class="btn"><i class="fas fa-plus"></i> &nbsp;Crear Marca</button>
+                    <select id="model_brand_select" class="form-control" name="">
+                    </select>
+                  </div>
+                </div>
+                <!--<select id="model_brand_select" class="form-control" name="">
+                  <option value=""></option>
+                  <option value="openBrandsForm">   <i class="fas fa-plus"></i> Crear Marca</option>
+                    <option value=""> Selecciona una Marca </option>
+                    <option value="openBrandsForm">Crear Marca</option>
+                    {{#each brands}}
+                      <option value="{{brand_name}}">{{brand_name}}</option>
+                    {{/each}}
+                </select>-->
+              </div>
+            </div>
+        </div>
+
+          {{> emptyFieldsWarning}}
+      </div>
+      <div class="modal-footer">
+        <span id="brandsForm_cancel_btn"  class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+        <sapn style="cursor: pointer" id="modelsForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

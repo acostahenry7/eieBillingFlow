@@ -1,0 +1,105 @@
+<!-- Modal -->
+<div class="modal fade" id="outletsModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="ml-auto" name="test" id="outletsModalTitle">Crear Empresa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  id="outlet_form_content"  accept-charset="" name="outlet_form"  class="mb-0 outlet-form" enctype="multipart/form-data">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-md-6 ml-auto" >
+                <b style="opacity: 0.6"><i class="fas fa-info-circle text-primary"></i> Información General</b>
+                <hr style="margin: 0 0 15px 0 " style="width: 160px">
+                    <div class="form-group mb-4 mt-4" style=" border-radius: 15px; border: dashed grey 1px; opacity: 0.7">
+                          <div class="image-upload-wrap " style="width: 530px; display: flex; justify-content: center; align-items: center; ">
+                              <input id="outlet_image" type="file" name="" value="" style="width: 540px; height: 180px; opacity:0; cursor: pointer" class="form-control d-inline" placeholder="IMAGE">
+                              <h4 class="" style="position: absolute; cursor: pointer">Drag Your Image</h4>
+                          </div>
+                    </div>
+                    <div class="form-group mb-2 mt-1">
+                      <label class="required mr-4" >Nombre</label>
+                      <input id="outlet_name" type="text" name="outlet_form_name" value=""class="form-control d-inline" placeholder="ej. Google" >
+                    </div>
+                    <div class="form-group mb-2">
+                      <label class="required mr-4" >RNC</label>
+                      <input id="outlet_rnc" type="text" name="outlet_form_rnc" value=""  class="form-control d-inline" placeholder="ej. 000111000">
+                    </div>
+                    <div class="form-group mb-2 outlet-form-group">
+                      <label class="mr-4 required" >Grupo Empresarial</label>
+                        <select id="outlet_companyname" type="text" name="outlet_form_rnc" value="" class="form-control d-inline" placeholder="(RNC)">
+                        </select>
+                      <button id="outlets_company_creation" class="fas fa-plus btn text-primary"></button>
+                    </div>
+                    <div class="form-group mb-2">
+                      <label class="required mr-4" >Website</label>
+                      <input id="outlet_website" type="text" name="outlet_form_rnc" value="" class="form-control d-inline" placeholder="example.com">
+                    </div>
+
+            </div>
+            <div class="col-md-6 ml-auto">
+                <b style="opacity: 0.6"><i class="fas fa-location-arrow text-primary"></i> Ubicación</b>
+                <hr style="margin: 0 0 15px 0 " style="width: 160px">
+                <div class="form-group mb-2">
+                  <label class="mr-4" >País</label>
+                  <select  id="outlet_country" name="outlet_form_rnc" class="form-control d-inline">
+                    <option value="" disabled selected> Seleccione un País </option>
+                    {{#each country}}
+                      <option value="{{country_id}}">{{country_name}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Provincia</label>
+                  <select id="outlet_province" name="outlet_form_province" class="form-control d-inline">
+                    <option value="" disabled selected> Seleccione Un Estado o Provincia</option>
+                  </select>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Municipio</label>
+                  <select id="outlet_municipality" name="outlet_form_municipality" class="form-control d-inline" >
+                    <option value="" disabled selected>Seleccione Un Municipio o Ciudad</option>
+                  </select>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Sector</label>
+                  <input id="outlet_sector" type="text" name="outlet_form_sector" value=""  class="form-control d-inline" placeholder="ej. Sector">
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Calle 1</label>
+                  <input id="outlet_street1" type="text" name="outlet_form_street1" value=""  class="form-control d-inline" placeholder="ej. Calle 1">
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Calle 2</label>
+                  <input id="outlet_street2" type="text" name="outlet_form_street2" value=""  class="form-control d-inline" placeholder="ej. Calle 2">
+                </div>
+                <div class="form-group mb-2 mt-3">
+                  <b style="opacity: 0.6"><i class="fas fa-headset text-primary"></i> Contacto</b>
+                  <hr style="margin: 0 0 15px 0 " style="width: 160px">
+                  <label class="required mr-4" > Teléfono</label>
+                  <input id="outlet_phones" type="text" name="outlet_form_phones" value=""  class="form-control d-inline" placeholder="ej. 8090992345">
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Fax</label>
+                  <input id="outlet_fax" type="text" name="outlet_form_fax" value=""  class="form-control d-inline" placeholder="ej. xxxxxxxxxx">
+                </div>
+                <div class="form-group mb-2">
+                  <label class="required mr-4" >Email</label>
+                  <input id="outlet_email" type="text" name="outlet_form_email" value=""  class="form-control d-inline" placeholder="ej. example@domai">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span id="outletsForm_cancel_btn" class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+        <button style="cursor: pointer" id="outletsForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

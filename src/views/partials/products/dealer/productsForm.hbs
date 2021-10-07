@@ -1,0 +1,226 @@
+<!-- Modal -->
+<div class="modal fade" id="productsModalForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-xl  modal-dialog-scrollable modal-dialog-centered" role="document" >
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="ml-auto" name="test" id="productsModalTitle">Crear Vehículo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="productsForm" class="p-4" >
+            <h6 class="text-center ">Datos Generales</h6>
+            <div class="" style="padding: 0">
+                <hr>
+            </div>
+            <div class="row mt-4">
+               <div class="col-md-6">
+                 <div class="form-group">
+                    <label class="required" for="">Chasis</label>
+                    <input type="text"  class="form-control d-inline ml-2" name=""   value="" placeholder="Chasis">
+                 </div>
+                 <div class="form-group mt-4">
+                    <label class="required" for="">Marca</label>
+                    <a id="products_brandsModalForm_toggle" title="Añadir Marca" class="btn btn-white text-primary fas fa-plus"></a>
+                    <select id="products_brand_select" class="form-control d-inline "    name="">
+                      <option value="" disabled selected>Selecciona una marca</option>
+                    </select>
+
+                 </div>
+                 <div class="form-group mt-4">
+                    <label for="">Modelo</label>
+                    <a id="products_modelsModalForm_toggle" class="btn btn-white text-primary fas fa-plus"></a>
+                    <select id="products_model_select" class="form-control d-inline ml-2"    name="">
+                      <option value="" disabled selected>Selecciona un modelo</option>
+                    </select>
+                 </div>
+                 <div class="form-group mt-4">
+                    <label for="">Tipo</label>
+                    <a id="products_producType_toggle" class="btn btn-white text-primary fas fa-plus"></a>
+                    <select id="products_productType_select" class="form-control d-inline ml-2"    name="">
+                      <option value="" disabled selected>Selecciona un tipo</option>
+                    </select>
+                 </div>
+                 <div class="form-group mt-4">
+                    <label for="">Placa</label>
+                    <input type="text"  class="form-control d-inline ml-2" name=""   value="" placeholder="Placa">
+                 </div>
+                 <div class="form-group mt-4">
+                    <label for="">Año</label>
+
+                    <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                      <option value="" disabled selected>Selecciona un año</option>
+                      <option value="">2010</option>
+                      <option value="">2011</option>
+                      <option value="">2012</option>
+                      <option value="">2013</option>
+                      <option value="">2014</option>
+                      <option value="">2015</option>
+                      <option value="">2016</option>
+                      <option value="">2017</option>
+                      <option value="">2018</option>
+                      <option value="">2019</option>
+                      <option value="">2020</option>
+                      <option value="">2021</option>
+                      <option value="">2022</option>
+                    </select>
+                 </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group ">
+                      <label for="">Matrícula</label>
+                      <input type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Matricula">
+                  </div>
+                  <div class="form-group mt-4">
+                     <label for="" class="required">Condicion</label>
+
+                     <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                       <option value="" disabled selected>Seleccione una condicion</option>
+                       <option value="">Nuevo</option>
+                       <option value="">Usado</option>
+                     </select>
+
+                     <!--<div class="btn-group ml-2"   role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-primary text-white border">Nuevo</button>
+                      <button type="button" class="btn btn-white border">Usado</button>
+                    </div>-->
+
+                  </div>
+                  <div class="form-group mt-4">
+                     <label for="">Proveedor</label>
+                     <a class="btn btn-white text-primary fas fa-plus"></a>
+                     <select class="form-control d-inline ml-2"    name="">
+                       <option value="" disabled selected>Selecciona un proveedor</option>
+                     </select>
+                  </div>
+                  <div class="form-group mt-4">
+                      <label for="">Color</label>
+                      <input type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Color">
+                  </div>
+                  <div class="form-group mt-4">
+                     <label for="">Estado</label>
+                     <a class="btn btn-white text-primary fas fa-plus"></a>
+                     <select class="form-control d-inline ml-2"    name="">
+                       <option value="" disabled selected>Selecciona un estado</option>
+                     </select>
+                  </div>
+                  <div class="form-group mt-4">
+                     <label for="">Combustible</label>
+                     <a class="btn btn-white text-primary fas fa-plus"></a>
+                     <select class="form-control d-inline ml-2"    name="">
+                       <option value="" disabled selected>Selecciona un combustible</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+
+            <!-- Form's second section-->
+
+            <h6 class="text-center mt-5">Detalles</h6>
+            <div class="" style="padding: 0">
+              <hr>
+            </div>
+            <div class="row mt-4">
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <label for="">Edición</label>
+                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Edición">
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Motor</label>
+                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Motor">
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Transmisión</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                       <option value="" disabled selected>Selecciona tipo de Transmisión</option>
+                       <option value="automatica">Automática</option>
+                       <option value="mecanica">Mecánica</option>
+                       <option value="hibrida">Híbrida</option>
+                     </select>
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Tracción</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                       <option value="" disabled selected>Selecciona tipo de Tracción</option>
+                       <option value="automatica">Trasera</option>
+                       <option value="mecanica">Delantera</option>
+                     </select>
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Puertas</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                       <option value="" disabled selected>Selecciona cantidad de Puertas</option>
+                       <option value="">1</option>
+                       <option value="">2</option>
+                       <option value="">4</option>
+                     </select>
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Interior</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                       <option value="" disabled selected>Selecciona color interior</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <label for="">Odómetro</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                       <option value="" disabled selected>Selecciona tipo de Odómetro</option>
+                       <option value=""></option>
+                     </select>
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Cilindros</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                       <option value="" disabled selected>Selecciona cantidad de Cilindros</option>
+                       <option value="">1</option>
+                       <option value="">2</option>
+                       <option value="">3</option>
+                       <option value="">4</option>
+                       <option value="">5</option>
+                       <option value="">6</option>
+                       <option value="">7</option>
+                       <option value="">8</option>
+                     </select>
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Kilometraje</label>
+                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Kilometraje">
+                 </div>
+                 <div class="form-group mt-4">
+                     <label for="">Pasajeros</label>
+                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                       <option value="" disabled selected>Selecciona cantidad de Pasajeros</option>
+                       <option value="">1</option>
+                       <option value="">2</option>
+                       <option value="">3</option>
+                       <option value="">4</option>
+                       <option value="">5</option>
+                       <option value="">6</option>
+                       <option value="">7</option>
+                     </select>
+                 </div>
+
+             </div>
+            </div>
+
+            <!--Form's third section-->
+
+            <h6 class="text-center mt-5">Images</h6>
+            <div class="" style="padding: 0">
+              <hr>
+            </div>
+
+          </form>
+      </div>
+      <div class="modal-footer">
+        <span id="brandsForm_cancel_btn"  class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+        <sapn style="cursor: pointer" id="productsForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
+      </div>
+    </div>
+  </div>
+</div>

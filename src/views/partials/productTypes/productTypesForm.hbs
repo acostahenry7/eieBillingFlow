@@ -1,0 +1,38 @@
+<div class="">
+
+<!-- Modal -->
+<div class="modal fade shadow" id="productTypesModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal modal-dialog-centered" role="document">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title ml-auto" name="test" id="productTypesModalTitle">Crear Tipo de Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  id="company_form_content" name="company_form"  class="p-1 mb-0">
+      <div class="modal-body ">
+        <div class="row">
+            <div class="col-md-12 ml-auto">
+              <div class="form-group">
+                <label class="required">Tipo Producto</label>
+                <input id="productType_name" type="text" name="company_form_name" value="" class="form-control" placeholder="Tipo producto" >
+              </div>
+              <div class="form-group">
+                <label for="">Descripción</label>
+                <textarea name="name" rows="6" cols="80" class="form-control"></textarea>
+              </div>
+            </div>
+        </div>
+
+          {{> emptyFieldsWarning}}
+      </div>
+      <div class="modal-footer">
+        <span id="brandsForm_cancel_btn"  class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+        <sapn style="cursor: pointer" id="productTypesForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

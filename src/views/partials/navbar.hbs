@@ -1,0 +1,68 @@
+<div class="">
+  <nav class="navbar navbar-expand-lg custom_nav">
+    <span id="toggleSidebarBtn" class="btn btn-light border"> <i id="toggleSidebarBtnIcon" class="fas fa-angle-left"></i> </span>
+    <span class="responsive_title">{{title}}</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span  class="navbar-toggler-icon"> <i class="my-2 my-sm-0 fas fa-ellipsis-v"></i> </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a style="color: black" class="nav-link" href="#">{{parent}}  {{title}}<span class="sr-only">(current)</span></a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu border-0 mt-2 shadow-sm" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>-->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input style="border-radius: 40px"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn fas fa-search my-2 my-sm-0" type="submit"></button>
+        <li class="nav-item dropdown list-unstyled" id="notification_nav_item">
+          <button class="btn far fa-bell" name="button" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+
+          <div class="dropdown-menu border-0 shadow-sm" style ="margin:14px 0 0 -140%; position: absolute" aria-labelledby="navbarDropdown3">
+            <div class="popdownmenu mx-auto " style="margin-top: -12.59px"></div>
+            <a class="dropdown-item" href="#">Mi Cuenta</a>
+            <a class="dropdown-item" href="#">Membresía</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Configuracion</a>
+            <a style="cursor: pointer; " class="dropdown-item">Logout</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown list-unstyled">
+          <span>{{user}}</span>
+          <a class="nav-link dropdown-toggle fas fa-user" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          </a>
+
+          <div class="dropdown-menu border-0 shadow-sm" style ="margin:13px 0 0 -38%; position: absolute" aria-labelledby="navbarDropdown2">
+            <div class="popdownmenu" style="margin: -12px 0 0 105px;"></div>
+
+            <a class="dropdown-item" href="#">Mi Cuenta</a>
+            <a class="dropdown-item" href="#">Membresía</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Configuración</a>
+            <a style="cursor: pointer" class="dropdown-item" id="logout">Cerrar Sesión</a>
+          </div>
+        </li>
+      </form>
+    </div>
+  </nav>
+</div>

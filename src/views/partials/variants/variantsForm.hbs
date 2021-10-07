@@ -1,0 +1,32 @@
+<div class="">
+
+<!-- Modal -->
+<div class="modal fade" id="variantsModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title ml-auto" name="test" id="variantsModalTitle">Crear Variante</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  id="variant_form_content" name="variant_form_modal"  class="p-1 mb-0">
+      <div class="modal-body">
+          <div class="form-group">
+            <label class="required">Nombre</label>
+            <input id="variant_name" type="text" name="variant_form_name" value="" class="form-control" placeholder="Variante" >
+          </div>
+          <!--<blockquote class="p-1" style="background-color: #E1FFCC; border-radius: 4px; color: #73AD4B; font-weight: bold">
+            <span style="font-size: 14px"><i class="fas fa-info-circle"></i> &nbsp;El grupo empresarial es aquel que contiene todas sus empresas</span>
+          </blockquote>-->
+          {{> emptyFieldsWarning}}
+      </div>
+      <div class="modal-footer">
+        <span id="variantsForm_cancel_btn" class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+        <sapn style="cursor: pointer" id="variantsForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

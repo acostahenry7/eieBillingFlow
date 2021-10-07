@@ -1,0 +1,72 @@
+.product-form {
+  width: 100%
+}
+
+
+.product-form .form-group label{
+  width: 150px
+}
+
+.product-form .form-group input{
+  width: 340px
+}
+
+.product-form .form-group select {
+  width: 340px
+}
+
+#product_companyname {
+  width: 300px
+}
+
+
+
+
+
+
+
+.modal-xl {
+  width: 1050px;
+}
+
+.product_form_style {
+  border:none
+}
+
+.product_form_style label {
+  width: 150px;
+}
+
+@media screen and (max-width: 400px){
+  #product_form_content input {
+    width: 100%
+  }
+
+  #product_form_content select {
+    width: 100%
+  }
+}
+
+
+
+/*----------------------------Product's Form----------------------------------*/
+
+
+#productsForm label {
+  width: 85px
+}
+
+#productsForm input, #productsForm .btn-group {
+  width: 290px;
+  float: right
+}
+
+#productsForm select {
+  width: 250px;
+  float: right;
+}
+
+#productsForm a {
+    margin-left: 70px;
+    margin-top: 3px
+}

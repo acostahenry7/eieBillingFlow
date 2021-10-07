@@ -1,0 +1,45 @@
+.outlet-form {
+  width: 100%
+}
+
+
+.outlet-form .form-group label{
+  width: 150px
+}
+
+.outlet-form .form-group input{
+  width: 340px
+}
+
+.outlet-form .form-group select {
+  width: 340px
+}
+
+#outlet_companyname {
+  width: 300px
+}
+
+
+
+
+
+
+
+
+.outlet_form_style {
+  border:none
+}
+
+.outlet_form_style label {
+  width: 150px;
+}
+
+@media screen and (max-width: 400px){
+  #outlet_form_content input {
+    width: 100%
+  }
+
+  #outlet_form_content select {
+    width: 100%
+  }
+}

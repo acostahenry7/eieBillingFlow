@@ -1,0 +1,33 @@
+<div class="container-fluid p-0">
+  <div class="card p-3">
+        <form id="outlet_form" style="" class="company_form">
+
+            <div class="form-group company_form_body">
+              <div class="form-group company_form_crear_group">
+                  <button id="outlet_create_btn" type="button" class="custom_btn_success mb-4 shadow-sm mr-4"> <i class="fas fa-plus"></i> &nbsp;Crear</button>
+              </div>
+              <div class="form-group" id="company_form_name_group" >
+                  <label for="">Nombre</label>
+                  <input id="company_form_name_input" class="form-control"  type="search" name="" value="" placeholder="Búsqueda por nombre">
+              </div>
+              <div class="form-group" id="company_form_status_group" >
+                <label for="">Estado</label>
+                <select id="company_form_status_select" class="form-control" name="" placeholder="Status">
+                  <option value="">Todos los estados</option>
+                  {{#each status}}
+                    <option value="{{status_name}}">{{status_name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="form-group company_form_buscar_group" >
+                <span title="refresh" id="outlet_form_refresh_btn" class="custom_btn_success" style="display: block; align-self: flex-end; width:auto; cursor:pointer"> <i style="padding: 4px 0" class="fas fa-sync"></i> </span>
+              </div>
+              <div class="form-group company_form_buscar_group">
+                <span title="" id="company_form_buscar_btn" class="custom_btn_success" style="display: block; align-self: flex-end">Buscar</span>
+              </div>
+            </div>
+
+        </form>
+        {{> outlets/datatable}}
+  </div>
+</div>

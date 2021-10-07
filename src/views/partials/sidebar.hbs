@@ -1,0 +1,99 @@
+  <nav id="sidebar" class="">
+    <div class="sidebar_header">
+        <h4 class="text-white" style="cursor: pointer"> <i class="fab fa-hornbill "></i><a href="/dashboard" style="display: inline">EIE Billing Flow</a></h4>
+    </div>
+    <div class="sidebar_body">
+      <ul class="list-unstyled">
+        <hr>
+        <li class="nav_item active">
+           <h4 class="sidebar_title"><a id="sidebar_dashboard_dropdown" href="#" class="ml-0 p-0 sidebar_title_a">Dashboard</a><i id="sidebar_dashboard_dropdown_icon" class="fas fa-angle-up"></i> </h4>
+           <ul id="collapseDashboard" class="list-unstyled">
+             <li>
+               <a href="/dashboard"><i class="fas fa-chart-line"></i>Dashboard</a>
+             </li>
+           </ul>
+        </li>
+        <hr>
+        <li class="nav_item active">
+           <h4 class="sidebar_title"> <a id="sidebar_sales_dropdown" class="ml-0 p-0 sidebar_title_a " href="#">Ventas</a><i id="sidebar_sales_dropdown_icon" class="fas fa-angle-up"></i></h4>
+           <ul id="collapseSales" class="list-unstyled">
+             <li onclick="sendContizationsCall">
+               <a id="href_contizaciones" style="cursor: pointer"><i class="fas fa-file-invoice-dollar"></i>Cotizaciones</a>
+             </li>
+             <li>
+               <a href="#"><i class="fas fa-handshake"></i>Endosos</a>
+             </li>
+             <li>
+               <a href="#"><i class="fas fa-dollar-sign"></i>Facturación</a>
+             </li>
+           </ul>
+        </li>
+        <hr>
+        <li class="nav_item">
+            <h4 class="sidebar_title"><a id="sidebar_inventary_dropdown" href="#" class="ml-0 p-0 sidebar_title_a">Inventario</a><i id="sidebar_inventary_dropdown_icon" class="fas fa-angle-up"></i> </h4>
+           <ul id="collapseInventary" class="list-unstyled">
+             <li>
+               <a href="/stockcontrol"><i class="fas fa-parachute-box"></i>Control Almacen</a>
+             </li>
+             <li>
+               <a href="/providers"><i class="fas fa-truck-moving"></i>Proveedores</a>
+             </li>
+             <li>
+               <a href="/products"><i class="fas fa-shopping-bag"></i>Productos</a>
+             </li>
+             <li>
+               <a href="/producttypes" href="#"><i class="fas fa-fan"></i>Tipos de Productos</a>
+             </li>
+             <li>
+               <a href="/variants"><i class="fab fa-artstation"></i>Variantes</a>
+             </li>
+           </ul>
+        </li>
+        <hr>
+        <li class="nav_item">
+           <h4 class="sidebar_title"><a id="sidebar_accounting_dropdown" href="#" class="ml-0 p-0 sidebar_title_a">Contabilidad</a><i id="sidebar_accounting_dropdown_icon" class="fas fa-angle-up"></i> </h4>
+          <ul id="collapseAccounting" class="list-unstyled">
+            <li>
+              <a href="#"><i class="fas fa-calculator"></i>Cuentas Por Pagar</a>
+            </li>
+          </ul>
+        </li>
+        <hr>
+        <li class="nav_item active">
+           <h4 class="sidebar_title"> <a id="sidebar_rrhh_dropdown" class="ml-0 p-0 sidebar_title_a " href="#">RRHH</a><i id="sidebar_rrhh_dropdown_icon" class="fas fa-angle-up"></i></h4>
+           <ul id="collapseRrhh" class="list-unstyled">
+             <li>
+               <a href="#"><i class="fas fa-sitemap"></i>Departamentos</a>
+             </li>
+             <li>
+               <a href="#top"><i class="fas fa-id-badge"></i>Cargos</a>
+             </li>
+             <li>
+               <a href="#"><i class="fas fa-user-friends  "></i>Empleados</a>
+             </li>
+           </ul>
+        </li>
+        <hr>
+        <li class="nav_item">
+           <h4 class="sidebar_title"><a id="sidebar_config_dropdown" href="#" class="ml-0 p-0 sidebar_title_a">Configuración</a><i id="sidebar_config_dropdown_icon" class="fas fa-angle-up"></i> </h4>
+            <ul id="collapseConfig" class="list-unstyled">
+              <li>
+                <a id="to_comapnies"><i class="fas fa-hotel"></i>Grupos Empresariales</a>
+              </li>
+              <li>
+                <a href="/outlets"><i class="fas fa-city"></i>Sucursales</a>
+              </li>
+              <li>
+                <a href="/users"><i class="fas fa-users"></i>Usuarios</a>
+              </li>
+              <li>
+                <a href="/brands"><i class="fas fa-copyright"></i>Marcas</a>
+              </li>
+              <li>
+                <a href="/models"><i class="fas fa-clone"></i>Modelos</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>

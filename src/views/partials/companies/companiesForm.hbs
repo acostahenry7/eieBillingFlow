@@ -1,0 +1,37 @@
+
+    <div class="">
+
+    <!-- Modal -->
+    <div class="modal fade" id="companiesModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content shadow">
+          <div class="modal-header">
+            <h5 class="modal-title ml-auto" name="test" id="exampleModalLongTitle">Crear Grupo Empresarial</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form  id="company_form_content" name="company_form_modal"  class="p-1 mb-0">
+          <div class="modal-body">
+              <div class="form-group">
+                <label class="required">Nombre</label>
+                <input id="company_name" type="text" name="company_form_name" value="" class="form-control" placeholder="(Grupo Empresarial)" >
+              </div>
+              <div class="form-group">
+                <label>RNC</label>
+                <input id="company_rnc" type="text" name="company_form_rnc" value="" class="form-control" placeholder="(RNC)">
+              </div>
+              <blockquote class="p-1" style="background-color: #E1FFCC; border-radius: 4px; color: #73AD4B; font-weight: bold">
+                <span style="font-size: 14px"><i class="fas fa-info-circle"></i> &nbsp;El grupo empresarial es aquel que contiene todas sus empresas</span>
+              </blockquote>
+              {{> emptyFieldsWarning}}
+          </div>
+          <div class="modal-footer">
+            <span id="companiesForm_cancel_btn" class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
+            <sapn style="cursor: pointer" id="companiesForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
