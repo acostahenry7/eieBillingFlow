@@ -11,6 +11,7 @@ const modelsController = require('../controllers/models.js');
 const productTypesController = require('../controllers/productTypes');
 const productsController = require('../controllers/products.js');
 const variantsController = require('../controllers/variants.js');
+const providersController = require('../controllers/providers.js')
 
 //General Modules Import
 const provincesController =  require("../controllers/provinces.js");
@@ -171,14 +172,14 @@ module.exports = (app) =>{
 
 
   //Providers
-  //router.get
+  router.get('/providers', providersController.providers)
 
 
   //Variants
   router.get('/variants', variantsController.variants)
   router.get('/variants/datafill', variantsController.datafill)
   router.post('/variants/create' , variantsController.createVariant);
-  
+
 
 
   //-----------------------General Modules--------------------------------------
