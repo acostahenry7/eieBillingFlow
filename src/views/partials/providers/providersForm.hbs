@@ -1,44 +1,87 @@
-<div class="">
-
 <!-- Modal -->
-<div class="modal fade shadow" id="providersModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal modal-dialog-centered" role="document">
+<div class="modal fade" id="providersModalForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+  <div style="max-height: 700px; padding: 40px 0" class="modal-dialog modal-md  modal-dialog-scrollable modal-dialog-centered" role="document" >
     <div class="modal-content shadow">
-      <div class="modal-header">
-        <h5 class="modal-title ml-auto" name="test" id="providersModalTitle">Crear Proveedor</h5>
+      <div class="modal-header text-center shadow-sm">
+        <h5 class="ml-auto" name="test" id="providersModalTitle">Crear Proveedor</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form  id="company_form_content" name="company_form"  class="p-1 mb-0">
-      <div class="modal-body ">
-        <div class="row">
-            <div class="col-md-12 ml-auto">
-              <div class="form-group">
-                <label class="required">Nombre Proveedor</label>
-                <input id="providers_name" type="text" name="company_form_name" value="" class="form-control" placeholder="Proveedor" >
-              </div>
-              <div class="form-group">
-                <label for="">RNC</label>
-                <input id="providers_name" type="text" name="company_form_name" value="" class="form-control" placeholder="RNC Proveedor" >
-              </div>
-              <div class="form-group">
-                <label for="">RNC</label>
-                  <select class="form-control" name="">
-
-                  </select>
-              </div>
+      <div class="modal-body">
+        <form  id="" name="company_form"  class="p-1 mb-0">
+          <div class="modal-body ">
+            <div class="row">
+                <div class="col-md-12 ml-auto">
+                  <label style="font-size: 17px; text-align: center; opacity: 0.6; font-weight: bold"><i class="fas fa-info-circle text-primary mr-2"></i>Información General</label>
+                  <hr style="margin:0">
+                  <div class="form-group">
+                    <label class="required mt-3">Nombre Proveedor</label>
+                    <input id="providers_name" type="text" name="company_form_name" value="" class="form-control" placeholder="Proveedor" >
+                  </div>
+                  <div class="form-group">
+                    <label for="">RNC</label>
+                    <input id="providers_rnc" type="text" name="company_form_name" value="" class="form-control" placeholder="RNC Proveedor" >
+                  </div>
+                  <div class="form-group">
+                    <label for="">Sitio Web</label>
+                    <input id="providers_website" class="form-control" type="text" name="" value="" placeholder="Sitio web">
+                  </div>
+                  <label style="font-size: 17px; text-align: center; opacity: 0.6; font-weight: bold"><i class="mt-3 fas fa-location-arrow text-primary mr-2"></i>Información de Ubicación</label>
+                  <hr style="margin-top: 0">
+                  <div class="form-group mt-3">
+                    <label for="">País</label>
+                      <select id="providers_country" class="form-control" name="">
+                          <option value="" disabled selected>Selecciona un País</option>
+                          {{#each country}}
+                            <option value="{{country_id}}">{{country_name}}</option>
+                          {{/each}}
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Provincia</label>
+                      <select id="providers_province" class="form-control" name="">
+                        <option value="" disabled selected>Selecciona un provincia</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Municipio</label>
+                      <select class="form-control" name="">
+                          <option value="" disabled selected>Selecciona un municipio</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Sector</label>
+                      <input type="text" class="form-control" name="" value="" placeholder="Sector">
+                  </div>
+                  <div class="form-group">
+                      <label for="">Calle 1</label>
+                      <input type="text" class="form-control" name="" value="" placeholder="Calle 1">
+                  </div>
+                  <div class="form-group">
+                      <label for="">Calle2</label>
+                      <input type="text" class="form-control" name="" value="" placeholder="Calle 2">
+                  </div>
+                  <label style="font-size: 17px; text-align: center; opacity: 0.6; font-weight: bold"><i class="mt-3 fas fa-headset text-primary mr-2"></i>Información de Contacto</label>
+                  <hr style="margin-top: 0">
+                  <div class="form-group">
+                      <label for="">Teléfono</label>
+                      <input class="form-control" type="text" name="" value="" placeholder="Teléfono">
+                  </div>
+                  <div class="form-group">
+                      <label for="">Correo</label>
+                      <input class="form-control" type="text" name="" value="" placeholder="ex@example.com">
+                  </div>
+                </div>
             </div>
-        </div>
-
-          {{> emptyFieldsWarning}}
+              {{> emptyFieldsWarning}}
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <span id="brandsForm_cancel_btn"  class="custom_btn_danger" data-dismiss="modal">Cancelar</span>
         <sapn style="cursor: pointer" id="providersForm_create_btn" name="Crear" class="text-white custom_btn_success">Crear</span>
       </div>
-      </form>
     </div>
   </div>
-</div>
 </div>

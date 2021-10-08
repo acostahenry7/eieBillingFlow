@@ -74,4 +74,33 @@ $(document).ready( () => {
        ]
   })
 
+  $('#providers_country').on('change', () => {
+
+        console.log("pcoun");
+       var data = {
+         countryId: $('#providers_country option:selected').val()
+       }
+       console.log(data.countryId);
+
+      $.ajax({
+        url: '/provinces/list',
+        type: 'POST',
+        data: data,
+        success: function (provinces){
+            console.log(provinces);
+            if (provinces.length > 0){
+              $('#providers_province').empty()
+              for (i of provinces){
+                console.log(i.province_name);
+                 $('#providers_province').append(new Option(i.province_name, i.province_id))
+              }
+            }
+
+        },
+        error: function (msg){
+           console.log(msg);
+        }
+      })
+  })
+
 })

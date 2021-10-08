@@ -327,7 +327,7 @@ $('#outlet_create_btn').on('click', () => {
 ///Inputs
 $(
   '#outlet_name,\
-  #outlet_rnc'
+   #outlet_rnc'
 ).on('input', e => {
     console.log($(this).val());
     validateChanges()

@@ -138,3 +138,10 @@ $('#products_producType_toggle').on('click' , () => {
     $('#productTypesModalForm').css('z-index', 9999)
     $('#productTypesModalForm').modal()
 })
+
+
+//Providers
+$('#products_providersModalForm_toggle').on('click' , () => {
+    $('#providersModalForm').css('z-index', 9999)
+    $('#providersModalForm').modal()
+})
