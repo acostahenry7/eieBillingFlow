@@ -173,6 +173,7 @@ module.exports = (app) =>{
 
   //Providers
   router.get('/providers', providersController.providers)
+  router.get('/providers/datafill', providersController.datafill)
 
 
   //Variants

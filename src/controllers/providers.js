@@ -26,8 +26,9 @@ controller.datafill = (req, res) => {
         }
       }
     }
-  ).then(provider => {
-      res.send(provider)
+  ).then(providers => {
+      
+      res.send(providers)
   })
 }
 
