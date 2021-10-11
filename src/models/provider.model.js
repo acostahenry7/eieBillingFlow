@@ -45,6 +45,9 @@ module.exports = (sequelize, Sequelize) => {
       website: {
         type: Sequelize.STRING
       },
+      created_by: {
+        type: Sequelize.STRING
+      },
       outlet_id: {
         type: Sequelize.STRING
       },

@@ -174,6 +174,10 @@ module.exports = (app) =>{
   //Providers
   router.get('/providers', providersController.providers)
   router.get('/providers/datafill', providersController.datafill)
+  router.post('/providers/create', providersController.create)
+  router.post('/providers/update', providersController.update)
+  router.post('/providers/delete', providersController.delete)
+
 
 
   //Variants
