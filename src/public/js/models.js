@@ -222,7 +222,7 @@ $('#modelsModalForm').on('hidden.bs.modal', () => {
 
 
 
-
+//Delete Button
 $('#models_dataTable tbody').on( 'click', 'a.delete', function () {
 
 
@@ -230,11 +230,11 @@ $('#models_dataTable tbody').on( 'click', 'a.delete', function () {
 
     if($(window).width() < 768){
        arr = table.row($(this)).data()
-      //console.log(arr);
+
     }
 
     $('#removingConfirmationModal_title_1').text("El Modelo ")
-    $('#removingConfirmationModal_title_2').text(arr.brand)
+    $('#removingConfirmationModal_title_2').text(arr.model)
     $('#removingConfirmationModal_title_3').text(" será eleminado. ¿Desea Continuar?")
 
     $('#removingConfirmationModal').modal()

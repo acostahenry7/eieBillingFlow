@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 const { verifySignUp } = require("../middleware")
 const authController = require("../controllers/auth.controller");
 const accessController = require("../controllers/user.controller");
@@ -14,6 +15,7 @@ const variantsController = require('../controllers/variants.js');
 const providersController = require('../controllers/providers.js')
 
 //General Modules Import
+const countriesController = require('../controllers/countries.js')
 const provincesController =  require("../controllers/provinces.js");
 const municipalitiesController = require("../controllers/municipalities.js")
 
@@ -21,7 +23,7 @@ const municipalitiesController = require("../controllers/municipalities.js")
 
 const outletController = require('../controllers/outlets.js')
 
-module.exports = (app) =>{
+module.exports = (app , storage) =>{
 
 
   /*router.get('/cotizaciones' , (req, res) => {
@@ -162,7 +164,7 @@ module.exports = (app) =>{
 
 
   //Prodcuts
-  router.get('/products'/*, authJwt.verifyToken*/ ,productsController.products)
+  router.get('/products', /*authJwt.verifyToken ,*/productsController.products)
   router.get('/products/datafill', productsController.datafill)
 
   router.get('/cotizaciones' , (req, res) => {
@@ -189,12 +191,21 @@ module.exports = (app) =>{
 
   //-----------------------General Modules--------------------------------------
 
-  app.post('/upload' , (req, res) => {
-      console.log(req.file);
+  var uploads = multer({storage: storage}).array('files', 12)
+  app.post('/upload' , (req, res, file) => {
+      uploads(req, res, function(err){
+          if (err){
+            return res.send(err)
+          }
+          res.send("done")
+      })
   })
 
+
+
+
   //Provinces
-  //router.get('/countries/list', countriesController.getCountries )
+  router.get('/countries/list', countriesController.countries )
   router.post('/outlets/list', outletController.getOutletsByCompId)
   router.post('/provinces/list', provincesController.getProvinces)
   router.post('/municipalities/list', municipalitiesController.getMunicipalities)

@@ -2,14 +2,7 @@ $(document).ready( () => {
 
 var params = {};
 
-      $.ajax({
-         url: '/providers/datafill',
-         type: 'GET',
-         success: function (data) {
-            console.log(data);
-         }
-      })
-  console.log("hi");
+
   var arr = {}
 
   var table = $('#providers_dataTable').DataTable({
@@ -108,7 +101,10 @@ $('#providersForm_create_btn').on('click' , () => {
     type: 'POST',
     data: data,
     success: function(provider) {
-      console.log(provider);
+      $('#createdWarningModal_title_1').text("La Empresa ")
+      $('#createdWarningModal_title_2').text($('#outlet_name').val())
+      $('#createdWarningModal_title_3').text(" fué creada con exito!")
+      $('#createdWarningModal').modal()
       $('#providersModalForm').modal('hide')
       table.ajax.reload(null, false)
     }
@@ -124,7 +120,10 @@ $('#providersForm_create_btn').on('click' , () => {
       type: 'POST',
       data: data,
       success: function(provider) {
-
+        $('#createdWarningModal_title_1').text("El Proveedor ")
+        $('#createdWarningModal_title_2').text(` ${params.provider_name}`)
+        $('#createdWarningModal_title_3').text(` fué actualizado a ${data.name} con exito!`)
+        $('#createdWarningModal').modal()
         $('#providersModalForm').modal('hide')
         table.ajax.reload(null, false)
       }
@@ -202,6 +201,21 @@ $('#providers_dataTable tbody').on('click' , 'a.edit', function(){
 
 
 //--------------------------------- Events -------------------------------------
+
+
+
+//Countries loader
+  $.ajax({
+     type: 'GET',
+     url: '/countries/list',
+     success: function(countries){
+        for (b of countries){
+            $('#providers_country').append(new Option(b.country_name, b.country_id))
+        }
+     }
+  })
+
+  //Provinces loader
   $('#providers_country').on('change', () => {
 
         console.log("pcoun");
@@ -215,14 +229,13 @@ $('#providers_dataTable tbody').on('click' , 'a.edit', function(){
         type: 'POST',
         data: data,
         success: function (provinces){
-            console.log(provinces);
-            if (provinces.length > 0){
-              $('#providers_province').empty()
+
+              $('#providers_province').empty().append(`<option value="" disabled selected>Selecciona un provincia</option>`,"")
+
               for (i of provinces){
-                console.log(i.province_name);
                  $('#providers_province').append(new Option(i.province_name, i.province_id))
               }
-            }
+
 
         },
         error: function (msg){

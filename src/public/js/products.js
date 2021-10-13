@@ -114,6 +114,41 @@ $.ajax({
 })
 
 
+//Providers
+$.ajax({
+   type: 'GET',
+   url: '/providers/datafill',
+   success: function(data){
+      for (b of data){
+         $('#products_providers_select').append(new Option(b.provider_name, b.provider_id))
+      }
+   }
+})
+
+
+//Images loader
+$('#product_images_btn').on('click', function(e){
+    e.preventDefault()
+
+    var files = $('#product_images').get(0).files
+    var formData = new FormData()
+
+    console.log(files);
+
+    for (i of files){
+        console.log(i);
+        formData.append('images[]', i, i.name)
+    }
+      for( b of formData.entries()){
+        console.log(b);
+      }
+    /*
+
+    $.ajax({
+
+    })*/
+})
+
 
 //--------------------------------Events----------------------------------------
 
