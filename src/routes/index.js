@@ -193,6 +193,7 @@ module.exports = (app , storage) =>{
 
   var uploads = multer({storage: storage}).array('files', 12)
   app.post('/upload' , (req, res, file) => {
+    console.log("FILE" ,file);
       uploads(req, res, function(err){
           if (err){
             return res.send(err)

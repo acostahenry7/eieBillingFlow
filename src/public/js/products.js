@@ -142,11 +142,18 @@ $('#product_images_btn').on('click', function(e){
       for( b of formData.entries()){
         console.log(b);
       }
-    /*
 
+    var hi = {}
     $.ajax({
+      type: 'POST',
+      url: '/upload',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function() {
 
-    })*/
+      }
+    })
 })
 
 
