@@ -43,10 +43,11 @@ module.exports = app =>{
     app.use(cookieParser());
     app.use(cors(corsOptions))
 
-
     var storage = multer.diskStorage({
+
         destination: function(req, file, callback) {
-           var dir = path.join(__dirname, '../public/uploads')
+           var storagePath = "OUTLET-0003"
+           var dir = path.join(__dirname, '../public/uploads/' + storagePath)
 
            if(!fs.existsSync(dir))
            {
@@ -56,14 +57,18 @@ module.exports = app =>{
         },
 
         filename: function (req, file, callback){
-            callback(null, file.originalname)
+            console.log(req.session.user);
+            var filename = file.originalname.substring(0 , file.originalname.lastIndexOf("."))
+            var fileExt = file.originalname.substring(file.originalname.lastIndexOf(".") , file.originalname.lenght)
+            var d = new Date()
+            var date = d.getFullYear().toString() + d.getMonth().toString() + d.getDate().toString() + d.getHours().toString() + d.getMinutes().toString() + d.getSeconds().toString() + d.getMilliseconds()
+
+
+            var fullname = filename + date + fileExt
+
+            callback(null, fullname)
         }
     })
-
-
-    /*app.use(multer({
-      dest: path.join(__dirname, 'public/uploads')
-    }).single('image'))*/
 
     //Routes
     routes(app, storage)

@@ -164,7 +164,7 @@ module.exports = (app , storage) =>{
 
 
   //Prodcuts
-  router.get('/products', /*authJwt.verifyToken ,*/productsController.products)
+  router.get('/products', authJwt.verifyToken ,productsController.products)
   router.get('/products/datafill', productsController.datafill)
 
   router.get('/cotizaciones' , (req, res) => {
@@ -192,9 +192,11 @@ module.exports = (app , storage) =>{
   //-----------------------General Modules--------------------------------------
 
   var uploads = multer({storage: storage}).array('files', 12)
+
   app.post('/upload' , (req, res, file) => {
-    console.log("FILE" ,file);
+
       uploads(req, res, function(err){
+          req.session.user
           if (err){
             return res.send(err)
           }

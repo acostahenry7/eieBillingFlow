@@ -130,22 +130,25 @@ $.ajax({
 $('#product_images_btn').on('click', function(e){
     e.preventDefault()
 
-    var files = $('#product_images').get(0).files
+    var files = [
+      $('#product_image_1').get(0).files[0],
+      $('#product_image_2').get(0).files[0],
+      $('#product_image_3').get(0).files[0],
+      $('#product_image_4').get(0).files[0]
+    ]
+    
     var formData = new FormData()
 
-    console.log(files);
+  console.log($('#product_image_1').get(0).files[0]);
 
-    for (i of files){
-        console.log(i);
-        formData.append('images[]', i, i.name)
+   for (i of files){
+       formData.append("files", i)
     }
-      for( b of formData.entries()){
-        console.log(b);
-      }
+    formData.append("name" , "test form name")
 
-    var hi = {}
-    $.ajax({
+   $.ajax({
       type: 'POST',
+      enctype: 'multipart/form-data',
       url: '/upload',
       data: formData,
       processData: false,

@@ -14,8 +14,8 @@ exports.signup = (req, res)=>{
   console.log("cont: " + req.body.username);
   User.create({
       username: req.body.username,
-      password: bcrypt.hashSync(req.body.password, 8)
-      //outlet_id: req.body.outletId
+      password: bcrypt.hashSync(req.body.password, 8),
+      outlet_id: req.body.outlet_id
   })
   .then(user => {
       if(req.body.roles){
@@ -77,9 +77,10 @@ exports.signin = (req, res) => {
           for(i=0; i < roles.length; i++){
             authorities.push("ROLE_" + roles[i].name.toUpperCase());
           }
-
+          console.log("Employee's Outlet", user.outlet_id );
           req.session.token = token;
           req.session.user = user.username;
+          req.session.outlet_id = user.outlet_id;
           console.log("Session", req.session);
 
 
