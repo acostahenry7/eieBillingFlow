@@ -46,7 +46,8 @@ module.exports = app =>{
     var storage = multer.diskStorage({
 
         destination: function(req, file, callback) {
-           var storagePath = "OUTLET-0003"
+
+           var storagePath = `${req.session.outlet_id}` //Missing Product_id, for folder name
            var dir = path.join(__dirname, '../public/uploads/' + storagePath)
 
            if(!fs.existsSync(dir))
@@ -57,7 +58,7 @@ module.exports = app =>{
         },
 
         filename: function (req, file, callback){
-            console.log(req.session.user);
+
             var filename = file.originalname.substring(0 , file.originalname.lastIndexOf("."))
             var fileExt = file.originalname.substring(file.originalname.lastIndexOf(".") , file.originalname.lenght)
             var d = new Date()

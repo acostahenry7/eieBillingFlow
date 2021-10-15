@@ -81,7 +81,7 @@ exports.signin = (req, res) => {
           req.session.token = token;
           req.session.user = user.username;
           req.session.outlet_id = user.outlet_id;
-          console.log("Session", req.session);
+          
 
 
           res.status(200).send({
