@@ -43,7 +43,7 @@ module.exports = app =>{
     app.use(cookieParser());
     app.use(cors(corsOptions))
 
-      var storage = multer.diskStorage({
+    var storage = multer.diskStorage({
 
         destination: function(req, file, callback) {
 
@@ -75,13 +75,12 @@ module.exports = app =>{
 
         destination: function(req, file, callback) {
 
-           var storagePath = `${req.session.outlet_id}` //Missing Product_id, for folder name
-           var dir = path.join(__dirname, '../public/uploads/temp/test')
+           var storagePath = `${req.session.outlet_id}/${req.session.user}` //Missing Product_id, for folder name
+           var dir = path.join(__dirname, '../public/uploads/temp/' + storagePath)
 
            if(!fs.existsSync(dir))
            {
-              console.log("Hi");
-             fs.mkdirSync(dir)
+             fs.mkdirSync(dir , {recursive: true})
            }
            callback(null, dir)
         },

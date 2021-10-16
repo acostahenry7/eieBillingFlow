@@ -67,9 +67,74 @@
 })
 
 
+//------------------------------ Actions ---------------------------------------
 
 
-//----------------------------Select Loaders-----------------------------------
+//Create Button
+//Create Button
+$('#productsForm_create_btn').on('click' , () => {
+
+  var data = {
+      name: $('#providers_name').val(),
+      rnc: $('#providers_rnc').val(),
+      website: $('#providers_website').val(),
+      country: $('#providers_country option:selected').val(),
+      province: $('#providers_province option:selected').val(),
+      municipality: $('#providers_municipality option:selected').val(),
+      sector: $('#providers_sector').val(),
+      street1: $('#providers_street1').val(),
+      street2: $('#providers_street2').val(),
+      phone: $('#providers_phone').val(),
+      email: $('#providers_email').val(),
+      creationDate: todayDate(),
+      modificationDate: todayDate(),
+      outletId: 'be1dfdc9-1c20-483f-ae66-d0f7699813d0'
+  }
+
+  if ( $('#providersForm_create_btn').text().trim() == "Crear"  ){
+
+  $.ajax({
+    url: '/providers/create',
+    type: 'POST',
+    data: data,
+    success: function(provider) {
+      $('#createdWarningModal_title_1').text("La Empresa ")
+      $('#createdWarningModal_title_2').text($('#outlet_name').val())
+      $('#createdWarningModal_title_3').text(" fué creada con exito!")
+      $('#createdWarningModal').modal()
+      $('#providersModalForm').modal('hide')
+      table.ajax.reload(null, false)
+    }
+  })
+
+  }else {
+
+    data.providerId = params.provider_id
+    console.log(data.providerId);
+
+    $.ajax({
+      url: '/providers/update',
+      type: 'POST',
+      data: data,
+      success: function(provider) {
+        $('#createdWarningModal_title_1').text("El Proveedor ")
+        $('#createdWarningModal_title_2').text(` ${params.provider_name}`)
+        $('#createdWarningModal_title_3').text(` fué actualizado a ${data.name} con exito!`)
+        $('#createdWarningModal').modal()
+        $('#providersModalForm').modal('hide')
+        table.ajax.reload(null, false)
+      }
+    })
+
+  }
+
+
+
+})
+
+
+
+//----------------------------Select Loaders------------------------------------
 
 
 
