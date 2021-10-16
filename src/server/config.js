@@ -43,7 +43,7 @@ module.exports = app =>{
     app.use(cookieParser());
     app.use(cors(corsOptions))
 
-    var storage = multer.diskStorage({
+      var storage = multer.diskStorage({
 
         destination: function(req, file, callback) {
 
@@ -71,8 +71,37 @@ module.exports = app =>{
         }
     })
 
+    var cache = multer.diskStorage({
+
+        destination: function(req, file, callback) {
+
+           var storagePath = `${req.session.outlet_id}` //Missing Product_id, for folder name
+           var dir = path.join(__dirname, '../public/uploads/temp/test')
+
+           if(!fs.existsSync(dir))
+           {
+              console.log("Hi");
+             fs.mkdirSync(dir)
+           }
+           callback(null, dir)
+        },
+
+        filename: function (req, file, callback){
+
+            var filename = file.originalname.substring(0 , file.originalname.lastIndexOf("."))
+            var fileExt = file.originalname.substring(file.originalname.lastIndexOf(".") , file.originalname.lenght)
+            var d = new Date()
+            var date = d.getFullYear().toString() + d.getMonth().toString() + d.getDate().toString() + d.getHours().toString() + d.getMinutes().toString() + d.getSeconds().toString() + d.getMilliseconds()
+
+
+            var fullname = filename + date + fileExt
+
+            callback(null, fullname)
+        }
+    })
+
     //Routes
-    routes(app, storage)
+    routes(app, storage, cache)
     //require('./app/routes/index')(app);
     //require('./app/routes/user.routes')(app);
     app.use('/public', express.static(path.join(__dirname, '../public')))

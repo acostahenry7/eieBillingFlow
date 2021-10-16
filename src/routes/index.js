@@ -23,7 +23,7 @@ const municipalitiesController = require("../controllers/municipalities.js")
 
 const outletController = require('../controllers/outlets.js')
 
-module.exports = (app , storage) =>{
+module.exports = (app , storage, cache) =>{
 
 
   /*router.get('/cotizaciones' , (req, res) => {
@@ -191,8 +191,10 @@ module.exports = (app , storage) =>{
 
   //-----------------------General Modules--------------------------------------
 
-  var uploads = multer({storage: storage}).array('files', 12)
+  var uploads = multer({storage: storage}).array('files', 10)
+  var tempUploads = multer({storage: cache}).array('files', 10)
 
+  //Images handlers
   app.post('/upload' , (req, res, file) => {
 
       uploads(req, res, function(err){
@@ -204,6 +206,14 @@ module.exports = (app , storage) =>{
       })
   })
 
+  app.post('/temp', (req, res, file) => {
+      tempUploads(req, res, function(err) {
+          if (err) {
+             return res.send(err)
+          }
+          res.send("Done!")
+      })
+  })
 
 
 
