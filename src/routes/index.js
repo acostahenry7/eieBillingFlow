@@ -170,6 +170,7 @@ module.exports = (app , storage, cache) =>{
   router.get('/cotizaciones' , (req, res) => {
       //res.render('dashboard')
       //res.redirect("dashboard")
+      
   })
 
 
