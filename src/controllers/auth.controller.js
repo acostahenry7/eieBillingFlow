@@ -2,6 +2,7 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
+const Outlet = db.outlet;
 
 const Op = db.Sequelize.Op;
 
@@ -14,6 +15,7 @@ exports.signup = (req, res)=>{
   console.log("cont: " + req.body.username);
   User.create({
       username: req.body.username,
+      email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 8),
       outlet_id: req.body.outlet_id
   })
@@ -46,6 +48,7 @@ exports.signup = (req, res)=>{
 
 
 exports.signin = (req, res) => {
+  var cmpTp;
   User.findOne({
     where: {
       username: req.body.username
@@ -81,16 +84,26 @@ exports.signin = (req, res) => {
           req.session.token = token;
           req.session.user = user.username;
           req.session.outlet_id = user.outlet_id;
-          
+          Outlet.findOne({attributes: ['company_type_id']},{
+            where: {
+               outlet_id: user.outlet_id
+            }
+          }).then(cti => {
 
 
-          res.status(200).send({
-            username: user.username,
-            email: user.email,
-            roles: authorities,
-            accessToken: token,
-            //sessionId: sess.token
-          });
+
+              res.status(200).send({
+                username: user.username,
+                email: user.email,
+                roles: authorities,
+                accessToken: token,
+                companyTypeId: cti.dataValues.company_type_id
+                //sessionId: sess.token
+              });
+          })
+
+          console.log("TESTING" ,cmpTp );
+
       });
   })
   .catch(err =>{

@@ -25,6 +25,8 @@ $('#login_send_btn').on('click' , () => {
 
      data: data,
      success: function(data){
+       console.log(data);
+       sessionStorage.setItem('companyTypeId', data.companyTypeId)
        console.log(data.accessToken);
        sessionStorage.setItem('token', data.accessToken)
        $.ajax({

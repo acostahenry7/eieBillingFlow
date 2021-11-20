@@ -36,6 +36,7 @@ db.variant = require("../models/variant.model.js")(sequelize, Sequelize);
 db.productType = require("../models/producttype.model.js")(sequelize, Sequelize);
 db.provider = require("../models/provider.model.js")(sequelize, Sequelize);
 db.product = require("../models/product.model.js")(sequelize, Sequelize);
+db.productDetails = require("../models/productdetails.model.js")(sequelize, Sequelize);
 
 db.country = require("../models/country.model.js")(sequelize, Sequelize);
 db.province = require("../models/province.model.js")(sequelize, Sequelize);

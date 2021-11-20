@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="productsModalForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+<div class="modal fade" id="ct1_productsModalForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
   <div style="max-width: 1050px" class="modal-dialog modal-xl  modal-dialog-scrollable modal-dialog-centered" role="document" >
     <div class="modal-content">
       <div class="modal-header shadow-sm text-center">
@@ -19,12 +19,12 @@
                <div class="col-md-6">
                  <div class="form-group">
                     <label class="required" for="">Chasis</label>
-                    <input id="products_chasis"type="text"  class="form-control d-inline ml-2" name=""   value="" placeholder="Chasis">
+                    <input id="ct1_chasis" type="text" class="form-control d-inline ml-2" name=""   value="" placeholder="Chasis">
                  </div>
                  <div class="form-group mt-4">
                     <label class="required" for="">Marca</label>
                     <a id="products_brandsModalForm_toggle" title="Añadir Marca" class="btn btn-white text-primary fas fa-plus"></a>
-                    <select id="products_brand_select" class="form-control d-inline "    name="">
+                    <select id="ct1_brand_select" class="form-control d-inline "    name="">
                       <option value="" disabled selected>Selecciona una marca</option>
                     </select>
 
@@ -33,54 +33,54 @@
                  <div class="form-group mt-4">
                     <label for="">Modelo</label>
                     <a id="products_modelsModalForm_toggle" class="btn btn-white text-primary fas fa-plus"></a>
-                    <select id="products_model_select" class="form-control d-inline ml-2"    name="">
+                    <select id="ct1_model_select" class="form-control d-inline ml-2"    name="">
                       <option value="" disabled selected>Selecciona un modelo</option>
                     </select>
                  </div>
                  <div class="form-group mt-4">
                     <label for="">Tipo</label>
                     <a id="products_producType_toggle" class="btn btn-white text-primary fas fa-plus"></a>
-                    <select id="products_productType_select" class="form-control d-inline ml-2"    name="">
+                    <select id="ct1_productType_select" class="form-control d-inline ml-2"    name="">
                       <option value="" disabled selected>Selecciona un tipo</option>
                     </select>
                  </div>
                  <div id="products_plate" class="form-group mt-4">
                     <label for="">Placa</label>
-                    <input type="text"  class="form-control d-inline ml-2" name=""   value="" placeholder="Placa">
+                    <input id="ct1_plate" type="text"  class="form-control d-inline ml-2" name=""   value="" placeholder="Placa">
                  </div>
                  <div class="form-group mt-4">
                     <label for="">Año</label>
 
-                    <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                    <select id="ct1_year" class="form-control d-inline ml-2"  style="width: 290px"  name="">
                       <option value="" disabled selected>Selecciona un año</option>
-                      <option value="">2010</option>
-                      <option value="">2011</option>
-                      <option value="">2012</option>
-                      <option value="">2013</option>
-                      <option value="">2014</option>
-                      <option value="">2015</option>
-                      <option value="">2016</option>
-                      <option value="">2017</option>
-                      <option value="">2018</option>
-                      <option value="">2019</option>
-                      <option value="">2020</option>
-                      <option value="">2021</option>
-                      <option value="">2022</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
                     </select>
                  </div>
                </div>
                <div class="col-md-6">
                   <div class="form-group ">
                       <label for="">Matrícula</label>
-                      <input type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Matricula">
+                      <input id="ct1_registration_number" type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Matricula">
                   </div>
                   <div class="form-group mt-4">
                      <label for="" class="required">Condicion</label>
 
-                     <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                     <select id="ct1_condition" class="form-control d-inline ml-2"  style="width: 290px"  name="">
                        <option value="" disabled selected>Seleccione una condicion</option>
-                       <option value="">Nuevo</option>
-                       <option value="">Usado</option>
+                       <option value="nuevo">Nuevo</option>
+                       <option value="usado">Usado</option>
                      </select>
 
                      <!--<div class="btn-group ml-2"   role="group" aria-label="Basic example">
@@ -92,17 +92,17 @@
                   <div class="form-group mt-4">
                      <label for="">Proveedor</label>
                      <a id="products_providersModalForm_toggle" class="btn btn-white text-primary fas fa-plus"></a>
-                     <select id="products_providers_select" class="form-control d-inline ml-2"    name="">
+                     <select id="ct1_providers_select" class="form-control d-inline ml-2"    name="">
                        <option value="" disabled selected>Selecciona un proveedor</option>
                      </select>
                   </div>
                   <div class="form-group mt-4">
                       <label for="">Color</label>
-                      <input type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Color">
+                      <input id="ct1_color" type="text" class="form-control d-inline ml-2"   name="" value="" placeholder="Color">
                   </div>
                   <div class="form-group mt-4">
                      <label for="">Estado</label>
-                     <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                     <select id="ct1_vehicle_status" class="form-control d-inline ml-2"  style="width: 290px"  name="">
                        <option value="" disabled selected>Selecciona un estado</option>
                        <option value="Disponible">Disponible</option>
                        <option value="Vendido">Vendido</option>
@@ -111,7 +111,7 @@
                   </div>
                   <div class="form-group mt-4">
                      <label for="">Combustible</label>
-                     <select class="form-control d-inline ml-2"  style="width: 290px"  name="">
+                     <select id="ct1_fuel_select" class="form-control d-inline ml-2"  style="width: 290px"  name="">
                        <option value="" disabled selected>Selecciona un combustible</option>
                        <option value="Gasolina">Gasolina</option>
                        <option value="Gasoil">Gasoil o Diesel</option>
@@ -137,15 +137,15 @@
              <div class="col-md-6">
                  <div class="form-group">
                      <label for="">Edición</label>
-                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Edición">
+                     <input id="ct1_edition" type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Edición">
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Motor</label>
-                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Motor">
+                     <input id="ct1_engine" type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Motor">
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Transmisión</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                     <select id="ct1_transmition" class="form-control d-inline ml-2"   style="width: 290px" name="">
                        <option value="" disabled selected>Selecciona tipo de Transmisión</option>
                        <option value="automatica">Automática</option>
                        <option value="mecanica">Mecánica</option>
@@ -154,7 +154,7 @@
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Tracción</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                     <select id="ct1_traction" class="form-control d-inline ml-2"   style="width: 290px" name="">
                        <option value="" disabled selected>Selecciona tipo de Tracción</option>
                        <option value="automatica">Trasera</option>
                        <option value="mecanica">Delantera</option>
@@ -162,16 +162,16 @@
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Puertas</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                     <select id="ct1_doors" class="form-control d-inline ml-2"   style="width: 290px" name="">
                        <option value="" disabled selected>Selecciona cantidad de Puertas</option>
-                       <option value="">1</option>
-                       <option value="">2</option>
-                       <option value="">4</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="4">4</option>
                      </select>
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Interior</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px" name="">
+                     <select id="ct1_inner_color" class="form-control d-inline ml-2"   style="width: 290px" name="">
                        <option value="" disabled selected>Selecciona color interior</option>
                      </select>
                  </div>
@@ -179,40 +179,40 @@
              <div class="col-md-6">
                  <div class="form-group">
                      <label for="">Odómetro</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                     <select id="ct1_odometer" class="form-control d-inline ml-2"   style="width: 290px">
                        <option value="" disabled selected>Selecciona tipo de Odómetro</option>
                        <option value=""></option>
                      </select>
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Cilindros</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                     <select id="ct1_cilinders" class="form-control d-inline ml-2"   style="width: 290px">
                        <option value="" disabled selected>Selecciona cantidad de Cilindros</option>
-                       <option value="">1</option>
-                       <option value="">2</option>
-                       <option value="">3</option>
-                       <option value="">4</option>
-                       <option value="">5</option>
-                       <option value="">6</option>
-                       <option value="">7</option>
-                       <option value="">8</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
+                       <option value="8">8</option>
                      </select>
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Kilometraje</label>
-                     <input type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Kilometraje">
+                     <input id="ct1_milage" type="text" name="" value="" class="form-control d-inline ml-2" placeholder="Kilometraje">
                  </div>
                  <div class="form-group mt-4">
                      <label for="">Pasajeros</label>
-                     <select class="form-control d-inline ml-2"   style="width: 290px">
+                     <select id="ct1_passengers" class="form-control d-inline ml-2"   style="width: 290px">
                        <option value="" disabled selected>Selecciona cantidad de Pasajeros</option>
-                       <option value="">1</option>
-                       <option value="">2</option>
-                       <option value="">3</option>
-                       <option value="">4</option>
-                       <option value="">5</option>
-                       <option value="">6</option>
-                       <option value="">7</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
                      </select>
                  </div>
 
