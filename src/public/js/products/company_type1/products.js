@@ -270,6 +270,13 @@ $('#products_providersModalForm_toggle').on('click' , () => {
     $('#providersModalForm').modal()
 })
 
+$('#ct1_choice_opt1, #choiceModal_title' ).on('click', () => {
+    $('#ct1_choice_modal').modal('hide')
+    $('#ct1_productsModalForm').modal()
+
+
+})
+
 //Form Loader
 $('#ct1_modal_btn').on('click' , () => {
     console.log(sessionStorage.getItem('companyTypeId'));
@@ -285,7 +292,7 @@ $('#ct1_modal_btn').on('click' , () => {
 function validateCompanyType (cti){
     switch (cti) {
       case "COMPTP-0001":
-          $('#ct1_productsModalForm').modal()
+          $('#ct1_choice_modal').modal()
         break;
       default:
 
