@@ -20,9 +20,14 @@ $(document).ready(() => {
          dataSrc: ""
        },
          columns: [
+           { data : null,
+             "render" : function(){
+                return `<input class="check" style="margin: 5px 0 0 8px" type="checkbox" name="" value="">`
+             }
+           },
            { data : "product_id"},
            { data : "product_name"},
-           /*{ data : "created_by"},*/
+           { data : "product_type_id"},
            { data : "product_description"},
            { data : "creation_date"},
            { data : "modification_date"},
@@ -42,7 +47,8 @@ $(document).ready(() => {
                }
 
                return `<a style="cursor: pointer;  text-decoration: none" class="edit text-primary fas fa-edit"></a>\
-               <a style="cursor: pointer; text-decoration: none" class="delete ml-3 text-danger fas fa-trash" ></a>`
+               <a style="cursor: pointer; text-decoration: none" class="delete ml-3 text-danger fas fa-trash" ></a>\
+               <a style="cursor: pointer; text-decoration: none; color: #E1C92D" class="delete ml-3 fas fa-clipboard-list" title="Detalles"></a>`
                //<a style="cursor: pointer; text-decoration: none" title=${arr.eyeTitle} class="disable ml-3 text-secondary ${arr.eyeClass}"></a>
              }
            }
@@ -62,11 +68,26 @@ $(document).ready(() => {
          },
          "columnDefs" : [
            {
-             "targets" : [0],
+             "targets" : [1],
              "visible" : false
            }
          ]
 })
+
+
+
+
+
+
+
+
+$('#products_dataTable tbody').on('click' , 'input.check', function(){
+     $(this).parents('tr').toggleClass('dt_col_check');
+})
+
+
+
+
 
 
 //------------------------------ Actions ---------------------------------------
@@ -105,12 +126,13 @@ $('#productsForm_create_btn').on('click' , () => {
 
   console.log(data);
 
-  $.ajax({
+ $.ajax({
     url: '/products/create',
     type: 'POST',
     data: data,
     success: function() {
-
+      $('#ct1_productsModalForm').modal('hide')
+      table.ajax.reload(null, false)
     }
   })
   /*if ( $('#providersForm_create_btn').text().trim() == "Crear"  ){
@@ -253,10 +275,8 @@ $('#product_images_btn').on('click', function(e){
 
 //Brands Form Trigger
 $('#products_brandsModalForm_toggle').on('click', () => {
-
     $('#brandsModalForm').css('z-index', 9999)
     $('#brandsModalForm').modal()
-
 })
 
 //Models Form Trigger

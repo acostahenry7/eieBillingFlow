@@ -281,6 +281,11 @@ body {
 }
 
 
+.dt_col_check {
+  background-color: rgba(222,226,230,0.5) !important
+}
+
+
 @media screen and (max-width: 768px) {
   #sidebar {
     left: -250px;
