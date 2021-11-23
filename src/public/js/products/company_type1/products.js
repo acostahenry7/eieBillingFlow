@@ -76,7 +76,7 @@ $(document).ready(() => {
 $('#productsForm_create_btn').on('click' , () => {
 
   var data = {
-      chasis: $('#ct1_chasis'),
+      chasis: $('#ct1_chasis').val(),
       brandId: $('#ct1_brand_select option:selected').val(),
       modelId: $('#ct1_model_select option:selected').val(),
       productTypeId: $('#ct1_productType_select option:selected').val(),
@@ -85,7 +85,7 @@ $('#productsForm_create_btn').on('click' , () => {
       registration_number: $('#ct1_registration_number').val(),
       condition: $('#ct1_condition option:selected').val(),
       providerId: $('#ct1_providers_select option:selected').val(),
-      color: $('#ct1_color'),
+      color: $('#ct1_color').val(),
       vehicleStatus: $('#ct1_vehicle_status option:selected').val(),
       fuel: $('#ct1_fuel_select option:selected').val(),
       edition: $('#ct1_edition').val(),
@@ -104,6 +104,15 @@ $('#productsForm_create_btn').on('click' , () => {
   }
 
   console.log(data);
+
+  $.ajax({
+    url: '/products/create',
+    type: 'POST',
+    data: data,
+    success: function() {
+
+    }
+  })
   /*if ( $('#providersForm_create_btn').text().trim() == "Crear"  ){
 
   $.ajax({

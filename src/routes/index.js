@@ -166,11 +166,12 @@ module.exports = (app , storage, cache) =>{
   //Prodcuts
   router.get('/products', authJwt.verifyToken ,productsController.products)
   router.get('/products/datafill', productsController.datafill)
+  router.post('/products/create' ,  productsController.create)
 
   router.get('/cotizaciones' , (req, res) => {
       //res.render('dashboard')
       //res.redirect("dashboard")
-      
+
   })
 
 

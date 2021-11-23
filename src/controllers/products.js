@@ -1,6 +1,7 @@
 var controller = {}
 var db = require('../models')
 var Product = db.product;
+var Model = db.model;
 var Op = db.Sequelize.Op;
 
 controller.products = (req, res) => {
@@ -26,6 +27,33 @@ controller.datafill = (req, res) => {
         console.log(product);
         res.send(product)
     })
+}
+
+controller.create = (req, res) => {
+   console.log(req.body);
+
+
+
+  Model.findOne(
+    {
+      attributes: ['model']
+    },
+    {
+      where: {
+         model_id: {
+           [Op.eq]: req.body.modelId
+         }
+      }
+    }
+  ).then( model => {
+
+      Product.create({
+         product_name: model,
+         product_description: '',
+         product_type_id: req.body.productTypeId
+      })
+  })
+   res.send('hi')
 }
 
 module.exports = controller;
