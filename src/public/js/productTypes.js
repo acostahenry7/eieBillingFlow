@@ -99,10 +99,10 @@ $(document).ready( () => {
                   $('#products_productType_select').empty()
                   for(b of data){
 
-                     $('#products_productType_select').append(new Option(b.product_type, b.product_type_id))
+                     $('#ct1_productType_select').append(new Option(b.product_type, b.product_type_id))
                   }
 
-                  $('#products_productType_select').val(createdItem.product_type_id)
+                  $('#ct1_productType_select').val(createdItem.product_type_id)
                 }
               })
 

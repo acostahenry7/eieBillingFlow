@@ -6,6 +6,7 @@ var Brand = db.brand;
 var Model = db.model;
 var Op = db.Sequelize.Op;
 
+
 controller.products = (req, res) => {
     var view = {}
     view.title = "Productos";
@@ -17,8 +18,8 @@ controller.products = (req, res) => {
 }
 
 controller.datafill = (req, res) => {
-    var data = []
-    Product.findAll(
+
+  Product.findAll(
       {
         where: {
           status_id: {
@@ -26,43 +27,77 @@ controller.datafill = (req, res) => {
           }
         }
       }
-    ).then( products => {
-        console.log("hijafkdasafj;asfs");
-        for (p of products){
-          console.log(products);
+    ).then(  products => {
+        //console.log("hijafkdasafj;asfs");
+          //var data = {}
+          var data = products
 
-          ProductType.findOne(
-            {
-              where: {
-                 product_type_id: {
-                   [Op.eq]: p.dataValues.product_type_id
-                 }
+
+            //console.log("WHY" , products[i].dataValues.product_type_id);
+            ProductType.findAll(
+              /*{
+                where: {
+                   product_type_id: {
+                     [Op.eq]: products[i].dataValues.product_type_id
+                   }
+                }
+              },*/
+              {
+                attributes: ['product_type_id','product_type']
               }
-            },
-            {
-              attributes: ['product_type']
-            }
-          ).then( productType => {
-             //console.log(productType.dataValues.product_type);
+            ).then(productTypes => {
+              for (p of products){
 
-              p.dataValues.product_type = productType.dataValues.product_type
+                for(pt of productTypes){
+                      if(pt.dataValues.product_type_id == p.dataValues.product_type_id)
 
+                      p.dataValues.product_type = pt.dataValues.product_type
+                  }
+              }
+                /*for (i = 0 ;  i < products.length; i++){
+                  data.productType.push(productType.dataValues.product_type)
+                }*/
 
-              console.log('Aborigen', p);
-              data.push(p)
-              console.log("HERE NOW" , data );
+                console.log("Last", data);
+                res.send(data)
+            })
 
-              //console.log(products);
-
-          })
-
-        }
-        console.log("YO NO SWE");
-        console.log("Last", data);
-        res.send(data)
 
     })
 }
+
+
+async function getProductType(products){
+  for (p of products){
+
+    ProductType.findOne(
+      {
+        where: {
+           product_type_id: {
+             [Op.eq]: p.dataValues.product_type_id
+           }
+        }
+      },
+      {
+        attributes: ['product_type']
+      }
+    ).then( productType => {
+       //console.log(productType.dataValues.product_type);
+
+        p.dataValues.product_type = productType.dataValues.product_type
+
+        data.push(p)
+        console.log("afjalkdj" ,data);
+        //console.log(products);
+
+    })
+
+    console.log(data);
+
+  }
+    return data
+}
+
 
 controller.create = (req, res) => {
    console.log(req.body);

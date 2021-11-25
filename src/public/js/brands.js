@@ -128,11 +128,11 @@ setInterval( function () {
                 url: '/models/brandlist',
                 success: function(data){
                   $('#model_brand_select').empty();
-                  $('#products_brand_select').empty()
+                  $('#ct1_brand_select').empty()
                   for (b of data) {
                     console.log(b.brand_name);
                     $('#model_brand_select').append(new Option(b.brand_name, b.brand_id))
-                    $('#products_brand_select').append(new Option(b.brand_name, b.brand_id))
+                    $('#ct1_brand_select').append(new Option(b.brand_name, b.brand_id))
                   }
                 }
               })

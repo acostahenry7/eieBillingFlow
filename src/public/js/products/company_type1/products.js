@@ -27,7 +27,7 @@ $(document).ready(() => {
            },
            { data : "product_id"},
            { data : "product_name"},
-           { data : "product_type_id"},
+           { data : "product_type"},
            { data : "product_description"},
            { data : "creation_date"},
            { data : "modification_date"},
@@ -78,14 +78,74 @@ $(document).ready(() => {
 
 
 
-
-
+  var classedRows = 0
 
 $('#products_dataTable tbody').on('click' , 'input.check', function(){
-     $(this).parents('tr').toggleClass('dt_col_check');
+        var counter = 0
+        //console.log(table.columns(0).data());
+      $(this).parents('tr').toggleClass('dt_col_check');
+
+      for ( b of $('#products_dataTable tbody tr.dt_col_check')) {
+         if ($(b).attr('class').split(" ")[1] == "dt_col_check"){
+              counter++
+              console.log(counter);
+         }else {
+             classedRows++
+         }
+      }
+
+     if (counter > 0){
+        $('#products_dt_select').text("( " + counter + ' ) filas seleccionadas ')
+        $('#products_dt_select_del').prop('hidden', false)
+     }else {
+        console.log("No");
+        $('#products_dataTable thead th input').prop('checked', false)
+        $('#products_dt_select_del').css('transition', '.5s')
+        $('#products_dt_select_del').prop('hidden', true)
+        $('#products_dt_select').text('')
+     }
 })
 
 
+$('#products_dataTable thead').on('click', 'input.check_all ', function() {
+  var counter = 0
+  var checkedRows = 0
+  //var rowQt
+
+    for ( b of $('#products_dataTable tbody tr input')) {
+      counter++
+      if ($(b).parents('tr').attr('class').split(" ")[1] == "dt_col_check"){
+           checkedRows++
+      }
+    }
+
+    console.log("Filas Seleccionadas" ,checkedRows , " vs " , " Total de filas", counter) ;
+
+
+        if ( checkedRows != counter){
+            for ( b of $('#products_dataTable tbody tr input')) {
+              $(b).parents('tr').addClass('dt_col_check')
+              $(b).prop('checked', true)
+              $('#products_dt_select_del').prop('hidden', true)
+              checkedRows = counter
+            }
+        }else {
+            for ( b of $('#products_dataTable tbody tr input')) {
+              $(b).parents('tr').removeClass('dt_col_check')
+              $(b).prop('checked', false)
+              $('#products_dataTable thead th input').prop('checked', false)
+              checkedRows = 0
+            }
+        }
+
+  if (checkedRows > 0){
+     $('#products_dt_select').text("( " + checkedRows + ' ) filas seleccionadas ')
+  }else {
+     console.log("No");
+     $('#products_dt_select').text('')
+  }
+
+})
 
 
 

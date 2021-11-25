@@ -1,7 +1,8 @@
 <table id="products_dataTable" class="table  border-0 table-sm table-hover" style=" width: 100%; margin-bottom: 40px; font-family: 'Nunito Sans', sans-serif;">
+
   <thead>
     <tr>
-      <th> <input type="checkbox" name="" value=""> </th>
+      <th> <input class="check_all" type="checkbox" name="" value=""> </th>
       <th>Código Producto</th>
       <th>Producto</th>
       <th>Tipo Producto</th>
@@ -14,4 +15,10 @@
   </thead>
   <tbody>
   </tbody>
+  <tfooter>
+    <div class="" style="display: inline-flex; position: absolute; right: 40px">
+      <label  id="products_dt_select"></label>
+      <i id="products_dt_select_del" class="fas fa-trash ml-3 text-danger" hidden></i>
+    </div>
+  </tfooter>
 </table>

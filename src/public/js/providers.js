@@ -107,6 +107,16 @@ $('#providersForm_create_btn').on('click' , () => {
       $('#createdWarningModal').modal()
       $('#providersModalForm').modal('hide')
       table.ajax.reload(null, false)
+      $.ajax({
+         type: 'GET',
+         url: '/providers/datafill',
+         success: function(data){
+            $('#ct1_providers_select').empty()
+            for (b of data){
+               $('#ct1_providers_select').append(new Option(b.provider_name, b.provider_id))
+            }
+         }
+      })
     }
   })
 

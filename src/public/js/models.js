@@ -121,9 +121,9 @@ $('#modelsForm_create_btn').on('click', ()=>{
                 bckData = JSON.parse(bckData)
                 $('#products_model_select').empty()
                 for(b of bckData){
-                   $('#products_model_select').append(new Option(b.model, b.model_id))
+                   $('#ct1_model_select').append(new Option(b.model, b.model_id))
                 }
-                $('#products_model_select').val(createdItem.model_id)
+                $('#ct1_model_select').val(createdItem.model_id)
               }
             })
 
