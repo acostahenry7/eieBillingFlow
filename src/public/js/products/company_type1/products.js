@@ -88,17 +88,15 @@ $('#products_dataTable tbody').on('click' , 'input.check', function(){
       for ( b of $('#products_dataTable tbody tr.dt_col_check')) {
          if ($(b).attr('class').split(" ")[1] == "dt_col_check"){
               counter++
-              console.log(counter);
          }else {
              classedRows++
          }
       }
 
      if (counter > 0){
-        $('#products_dt_select').text("( " + counter + ' ) filas seleccionadas ')
+        $('#products_dt_select').text("( " + counter + ' ) items seleccionados ')
         $('#products_dt_select_del').prop('hidden', false)
      }else {
-        console.log("No");
         $('#products_dataTable thead th input').prop('checked', false)
         $('#products_dt_select_del').css('transition', '.5s')
         $('#products_dt_select_del').prop('hidden', true)
@@ -119,14 +117,12 @@ $('#products_dataTable thead').on('click', 'input.check_all ', function() {
       }
     }
 
-    console.log("Filas Seleccionadas" ,checkedRows , " vs " , " Total de filas", counter) ;
-
 
         if ( checkedRows != counter){
             for ( b of $('#products_dataTable tbody tr input')) {
               $(b).parents('tr').addClass('dt_col_check')
               $(b).prop('checked', true)
-              $('#products_dt_select_del').prop('hidden', true)
+              $('#products_dt_select_del').prop('hidden', false)
               checkedRows = counter
             }
         }else {
@@ -134,20 +130,45 @@ $('#products_dataTable thead').on('click', 'input.check_all ', function() {
               $(b).parents('tr').removeClass('dt_col_check')
               $(b).prop('checked', false)
               $('#products_dataTable thead th input').prop('checked', false)
+              $('#products_dt_select_del').prop('hidden', true)
               checkedRows = 0
             }
         }
 
   if (checkedRows > 0){
-     $('#products_dt_select').text("( " + checkedRows + ' ) filas seleccionadas ')
+     $('#products_dt_select').text("( " + checkedRows + ' ) items seleccionados ')
   }else {
-     console.log("No");
+
      $('#products_dt_select').text('')
   }
 
 })
 
+$('#products_dt_select_del').on('click' , function() {
+    var data = {}
+    data.ids = []
 
+    for (b of $('#products_dataTable tbody tr input')) {
+      //console.log(table.row($(b).parents('tr')).data());
+      if($(b).parents('tr').attr('class').split(" ")[1] == "dt_col_check"){
+
+        data.ids.push(table.row($(b).parents('tr')).data().product_id);
+
+      }
+    }
+
+    $.ajax({
+       type: 'POST',
+       url: '/products/delete',
+       data: data,
+       success: function(products){
+          for (b of products){
+            console.log(b);
+          }
+          table.ajax.reload(null, false)
+       }
+    })
+})
 
 
 //------------------------------ Actions ---------------------------------------

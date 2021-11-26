@@ -23,7 +23,7 @@ controller.datafill = (req, res) => {
       {
         where: {
           status_id: {
-            [Op.ne]: 'STAUTS-0003'
+            [Op.ne]: '97c5c826-ea08-4bf3-901f-d4aeb77463a4'
           }
         }
       }
@@ -146,6 +146,23 @@ controller.create = (req, res) => {
     })
 })
 
+}
+
+controller.delete = (req, res) => {
+
+
+   Product.update(
+     {
+        status_id: '97c5c826-ea08-4bf3-901f-d4aeb77463a4'
+     },
+     {
+        where: {
+           product_id: req.body.ids
+        }
+     }
+   ).then(products => {
+      res.send(products)
+   })
 }
 
 module.exports = controller;

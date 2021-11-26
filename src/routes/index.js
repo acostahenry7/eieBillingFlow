@@ -167,6 +167,7 @@ module.exports = (app , storage, cache) =>{
   router.get('/products', authJwt.verifyToken ,productsController.products)
   router.get('/products/datafill', productsController.datafill)
   router.post('/products/create' ,  productsController.create)
+  router.post('/products/delete' , productsController.delete)
 
   router.get('/cotizaciones' , (req, res) => {
       //res.render('dashboard')
