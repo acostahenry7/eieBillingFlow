@@ -166,6 +166,8 @@ $('#products_dt_select_del').on('click' , function() {
             console.log(b);
           }
           table.ajax.reload(null, false)
+          $('#products_dt_select').text('')
+          $('#products_dt_select_del').prop('hidden', true)
        }
     })
 })
@@ -258,7 +260,12 @@ $('#productsForm_create_btn').on('click' , () => {
 
 })
 
-
+$('#products_dataTable tbody').on('click', 'a.edit', function(){
+    $('#productsModalTitle').text('Actualizar Vehículo')
+    var data = table.row($(this).parents('tr')).data()
+    console.log(data);
+    $('#ct1_productsModalForm').modal()
+})
 
 //----------------------------Select Loaders------------------------------------
 

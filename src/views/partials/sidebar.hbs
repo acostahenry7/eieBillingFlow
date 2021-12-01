@@ -33,7 +33,18 @@
             <h4 class="sidebar_title"><a id="sidebar_inventary_dropdown" href="#" class="ml-0 p-0 sidebar_title_a">Inventario</a><i id="sidebar_inventary_dropdown_icon" class="fas fa-angle-up"></i> </h4>
            <ul id="collapseInventary" class="list-unstyled">
              <li>
-               <a href="/stockcontrol"><i class="fas fa-parachute-box"></i>Control Almacen</a>
+               <a data-toggle="collapse" href="#collapseStockcontrol" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-parachute-box"></i>Control Almacen<i class="ml-3 fas fa-angle-down"></i></a>
+               <ul id="collapseStockcontrol" class="ml-3 text-white collapse">
+                 <li>
+                   <a href="#">Entradas</a>
+                 </li>
+                 <li>
+                   <a href="#">Salidas</a>
+                 </li>
+                 <li>
+                   <a href="#">Ubicaciones</a>
+                 </li>
+               </ul>
              </li>
              <li>
                <a href="/providers"><i class="fas fa-truck-moving"></i>Proveedores</a>
