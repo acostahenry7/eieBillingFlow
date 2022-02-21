@@ -9,6 +9,7 @@ const Status = db.status;
 
 const app = config(express())
 
+//
 //Initial Data
 const sd = require('./server/starting-data')
 const countriesSD = sd.countries
